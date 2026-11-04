@@ -1,0 +1,22 @@
+apiVersion: asset.sap/v1
+kind: Asset
+
+metadata:
+  name: financial-closing-escalation-agent-extension
+  description: Extends the SAP Financial Closing Assistant with Stonebridge Equipment Group company-specific escalation rules for period-end closing — Critical posting errors above €100k, Urgent deadline proximity within 4 hours, and Flag for overdue tasks blocking downstream dependencies. Operates in read-only advisory mode.
+  version: 1.0.0
+
+type: agent-extension
+
+sourceRoot: "."
+
+provides:
+  extensions:
+    - descriptorFile: extension.yaml
+      name: financial-closing-escalation-agent-extension
+
+requires:
+  - name: financial-closing-assistant
+    kind: agent
+    version: "1.0.0"
+    ordId: sap.agtcloass:agent:financial-closing-assistant:v1

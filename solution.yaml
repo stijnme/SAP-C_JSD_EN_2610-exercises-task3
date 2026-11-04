@@ -1,0 +1,10 @@
+apiVersion: solution.sap/v1
+kind: Solution
+
+metadata:
+  name: stonebridge-closing-escalation-ed791
+  version: 1.0.0
+  description: Extends the SAP Financial Closing Assistant with Stonebridge Equipment Group company-specific closing escalation rules — identifying critical posting errors, deadline-imminent tasks, and schedule-blocking overdue tasks in read-only advisory mode.
+
+assets:
+  - ref: ./assets/financial-closing-escalation-agent-extension/asset.yaml
